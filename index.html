@@ -13,7 +13,7 @@
 :root{
   --pr:#1a3c5e; --pr2:#0f2744; --pr3:#2563a8;
   --ok:#10b981; --ok2:#059669;
-  --bad:#ef4444; --bad2:#dc2626;
+  --bad:#f59e0b; --bad2:#d97706;
   --wa:#f59e0b;
   --tx:#0f172a; --tx2:#64748b;
   --bd:#e2e8f0; --bg:#f4f6f9;
@@ -43,7 +43,8 @@ body{margin:0; font-family:'Inter',sans-serif; background:var(--bg); color:var(-
 .tab{position:absolute; inset:0; overflow-y:auto; padding-bottom:calc(var(--nh) + 90px); display:none;}
 .tab.on{display:block;}
 
-.section-title{font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.4px; color:var(--tx2); margin:16px 14px 8px;}
+.section-title{font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.4px; color:var(--tx2); margin:16px 14px 8px; display:flex; align-items:center; justify-content:space-between;}
+.section-title .mini-btn{text-transform:none; letter-spacing:0; font-size:12.5px; font-weight:700; color:var(--pr3); background:none; border:none; font-family:inherit;}
 
 .search-bar{display:flex; gap:8px; margin:12px 14px 0;}
 .search-bar input[type=text]{flex:1; border:1.5px solid var(--bd); border-radius:12px; padding:11px 13px; font-size:14.5px; font-family:inherit; background:#fff;}
@@ -63,7 +64,7 @@ body{margin:0; font-family:'Inter',sans-serif; background:var(--bg); color:var(-
 .card:active{transform:scale(.98);}
 .card .icon{width:40px; height:40px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0;}
 .icon.ok{background:#d1fae5; color:var(--ok2);}
-.icon.bad{background:#fee2e2; color:var(--bad2);}
+.icon.bad{background:#fef3c7; color:var(--bad2);}
 .card .info{flex:1; min-width:0;}
 .card .info .nm{font-weight:600; font-size:14.5px;}
 .card .info .mt{font-size:12px; color:var(--tx2); margin-top:1px;}
@@ -96,6 +97,26 @@ body{margin:0; font-family:'Inter',sans-serif; background:var(--bg); color:var(-
 .backup-row button{flex:1; padding:13px; border-radius:14px; border:1.5px solid var(--bd); background:#fff; color:var(--tx2); font-weight:700; font-size:13px; font-family:inherit;}
 #fileImport{display:none;}
 
+/* Ahorro */
+.goal-card{background:#fff; border-radius:16px; padding:15px; margin:6px 14px; box-shadow:var(--sh);}
+.goal-card .gtop{display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;}
+.goal-card .gname{font-weight:700; font-size:15px;}
+.goal-card .gdel{background:none; border:none; font-size:15px; color:var(--tx2); padding:2px 4px;}
+.goal-card .gnums{display:flex; justify-content:space-between; font-size:12.5px; color:var(--tx2); margin-top:6px;}
+.goal-card .gnums b{color:var(--tx); font-weight:700;}
+.goal-track{height:12px; background:#e9edf2; border-radius:7px; overflow:hidden; margin-top:4px;}
+.goal-fill{height:100%; border-radius:7px; background:linear-gradient(90deg,#059669,#10b981); transition:width .3s;}
+.goal-actions{display:flex; gap:8px; margin-top:12px;}
+.goal-actions button{flex:1; padding:10px; border-radius:11px; border:none; font-weight:700; font-size:13px; font-family:inherit; background:var(--pr); color:#fff;}
+.ahorro-summary{margin:0 14px 4px;}
+.new-goal-btn{margin:16px 14px 0; padding:14px; border-radius:14px; border:1.5px dashed var(--bd); background:none; color:var(--pr3); font-weight:700; font-size:14px; width:calc(100% - 28px); font-family:inherit;}
+
+/* Frase */
+.phrase-banner{position:fixed; top:14px; left:14px; right:14px; background:#fff; border-radius:16px; padding:14px 16px; box-shadow:0 10px 30px rgba(0,0,0,.18); z-index:998; border-left:4px solid var(--pr3); transform:translateY(-140%); transition:transform .35s cubic-bezier(.32,.72,0,1); cursor:pointer;}
+.phrase-banner.on{transform:translateY(0);}
+.phrase-banner .ptitle{font-size:10.5px; font-weight:800; text-transform:uppercase; letter-spacing:.5px; color:var(--pr3); margin-bottom:4px;}
+.phrase-banner .ptext{font-size:13px; line-height:1.45; color:var(--tx);}
+
 #nav{background:#fff; border-top:1px solid rgba(0,0,0,.06); height:var(--nh); display:flex; padding-bottom:env(safe-area-inset-bottom); flex-shrink:0;}
 .nav-btn{flex:1; border:none; background:none; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px; color:var(--tx2); font-size:11px; font-weight:600; font-family:inherit;}
 .nav-btn .ic{font-size:20px;}
@@ -119,7 +140,7 @@ body{margin:0; font-family:'Inter',sans-serif; background:var(--bg); color:var(-
 .toggle2{display:flex; gap:8px; margin:14px 14px 0;}
 .toggle2 button{flex:1; padding:14px 8px; border-radius:14px; border:1.5px solid var(--bd); background:#fff; font-weight:700; font-size:14px; font-family:inherit; color:var(--tx2);}
 .toggle2 button.sel-ok{border-color:var(--ok); background:#d1fae5; color:var(--ok2);}
-.toggle2 button.sel-bad{border-color:var(--bad); background:#fee2e2; color:var(--bad2);}
+.toggle2 button.sel-bad{border-color:var(--bad); background:#fef3c7; color:var(--bad2);}
 
 .chips{display:flex; flex-wrap:wrap; gap:8px; margin:14px 14px 0;}
 .chips button{padding:9px 14px; border-radius:20px; border:1.5px solid var(--bd); background:#fff; font-size:13px; font-weight:600; color:var(--tx2); font-family:inherit;}
@@ -128,7 +149,7 @@ body{margin:0; font-family:'Inter',sans-serif; background:var(--bg); color:var(-
 .sheet-actions{display:flex; gap:10px; margin:20px 14px 4px;}
 .sheet-actions button{flex:1; padding:14px; border-radius:14px; border:none; font-weight:700; font-size:14.5px; font-family:inherit;}
 .btn-primary{background:var(--pr); color:#fff;}
-.btn-danger{background:#fee2e2; color:var(--bad2);}
+.btn-danger{background:#fee2e2; color:#dc2626;}
 .btn-ghost{background:#eef2f6; color:var(--tx2);}
 
 #toast{position:fixed; bottom:calc(var(--nh) + 14px); left:50%; transform:translateX(-50%) translateY(90px); background:#0f172a; color:#fff; padding:10px 20px; border-radius:14px; font-size:13px; font-weight:600; z-index:999; transition:transform .28s cubic-bezier(.32,.72,0,1); white-space:nowrap;}
@@ -142,6 +163,11 @@ body{margin:0; font-family:'Inter',sans-serif; background:var(--bg); color:var(-
   <div class="spinner"></div>
 </div>
 
+<div class="phrase-banner" id="phraseBanner" onclick="hidePhrase()">
+  <div class="ptitle">🙏 Gratitud y abundancia</div>
+  <div class="ptext" id="phraseText"></div>
+</div>
+
 <div id="app">
   <div id="hdr">
     <h1 id="hdrTitle">Este mes</h1>
@@ -152,11 +178,11 @@ body{margin:0; font-family:'Inter',sans-serif; background:var(--bg); color:var(-
     </div>
     <div class="split">
       <div class="chip">
-        <div class="lbl"><span class="dot" style="background:#34d399"></span>Inteligente</div>
+        <div class="lbl"><span class="dot" style="background:#34d399"></span>Consciente</div>
         <div class="val" id="hdrOk">$0</div>
       </div>
       <div class="chip">
-        <div class="lbl"><span class="dot" style="background:#f87171"></span>Pendejo</div>
+        <div class="lbl"><span class="dot" style="background:#fbbf24"></span>Impulsivo</div>
         <div class="val" id="hdrBad">$0</div>
       </div>
     </div>
@@ -182,15 +208,26 @@ body{margin:0; font-family:'Inter',sans-serif; background:var(--bg); color:var(-
       <div id="listaGastos"></div>
     </div>
 
+    <div class="tab" id="tab-ahorro">
+      <div class="section-title">Tu ahorro</div>
+      <div class="stat-grid ahorro-summary">
+        <div class="stat-card"><div class="lbl">Total ahorrado</div><div class="val" id="ahTotalGlobal">$0</div></div>
+        <div class="stat-card"><div class="lbl">Metas activas</div><div class="val" id="ahMetasCount">0</div></div>
+      </div>
+      <div class="section-title" style="margin-top:18px;">Tus metas</div>
+      <div id="listaMetas"></div>
+      <button class="new-goal-btn" id="btnNuevaMeta">＋ Nueva meta de ahorro</button>
+    </div>
+
     <div class="tab" id="tab-resumen">
       <div class="section-title">Resumen del mes</div>
       <div class="stat-grid">
         <div class="stat-card"><div class="lbl">Total gastado</div><div class="val" id="resTotal">$0</div><div class="delta" id="resDelta"></div></div>
-        <div class="stat-card streak"><div class="lbl">🔥 Racha inteligente</div><div class="val" id="resRacha">0 días</div></div>
+        <div class="stat-card streak"><div class="lbl">🔥 Racha consciente</div><div class="val" id="resRacha">0 días</div></div>
       </div>
       <div class="section-title">Por subcategoría</div>
       <div id="barsSubcat"></div>
-      <div class="section-title">Inteligente vs pendejo</div>
+      <div class="section-title">Consciente vs impulsivo</div>
       <div id="barsTipo"></div>
       <button class="export-btn" id="btnExport">⬇️ Descargar Excel con todos los datos</button>
       <div class="backup-row">
@@ -205,6 +242,7 @@ body{margin:0; font-family:'Inter',sans-serif; background:var(--bg); color:var(-
 
   <div id="nav">
     <button class="nav-btn on" data-tab="registro"><span class="ic">📋</span>Registro</button>
+    <button class="nav-btn" data-tab="ahorro"><span class="ic">🐷</span>Ahorro</button>
     <button class="nav-btn" data-tab="resumen"><span class="ic">📊</span>Resumen</button>
   </div>
 </div>
@@ -221,8 +259,8 @@ body{margin:0; font-family:'Inter',sans-serif; background:var(--bg); color:var(-
     </div>
 
     <div class="toggle2">
-      <button id="btnTipoOk" onclick="setTipo('inteligente')">🟢 Inteligente</button>
-      <button id="btnTipoBad" onclick="setTipo('pendejo')">🔴 Pendejo</button>
+      <button id="btnTipoOk" onclick="setTipo('consciente')">🟢 Consciente</button>
+      <button id="btnTipoBad" onclick="setTipo('impulsivo')">🟠 Impulsivo</button>
     </div>
 
     <div class="field" style="margin-top:14px;">
@@ -248,21 +286,112 @@ body{margin:0; font-family:'Inter',sans-serif; background:var(--bg); color:var(-
   </div>
 </div>
 
+<!-- Modal nueva meta -->
+<div class="modal" id="modalMeta" onclick="closeMO(event,'modalMeta')">
+  <div class="modal-sheet">
+    <div class="sheet-handle"></div>
+    <div class="sheet-header">Nueva meta de ahorro</div>
+    <div class="field">
+      <label>¿Para qué estás ahorrando?</label>
+      <input type="text" id="mNombre" placeholder="Ej. Viaje, colchón de emergencia...">
+    </div>
+    <div class="field">
+      <label>Monto objetivo</label>
+      <input type="number" inputmode="decimal" id="mObjetivo" class="amt-input" placeholder="$0">
+    </div>
+    <div class="field">
+      <label>Fecha límite (opcional)</label>
+      <input type="date" id="mFecha">
+    </div>
+    <div class="sheet-actions">
+      <button class="btn-ghost" onclick="closeModal('modalMeta')">Cancelar</button>
+      <button class="btn-primary" onclick="guardarMeta()">Crear meta</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal depósito -->
+<div class="modal" id="modalDeposito" onclick="closeMO(event,'modalDeposito')">
+  <div class="modal-sheet">
+    <div class="sheet-handle"></div>
+    <div class="sheet-header">Agregar a tu ahorro</div>
+    <div class="field">
+      <label>Monto</label>
+      <input type="number" inputmode="decimal" id="dMonto" class="amt-input" placeholder="$0">
+    </div>
+    <div class="field" style="margin-top:14px;">
+      <label>Meta</label>
+    </div>
+    <div class="chips" id="chipsMetaDeposito"></div>
+    <div class="field">
+      <label>Fecha</label>
+      <input type="date" id="dFecha">
+    </div>
+    <div class="field">
+      <label>Nota (opcional)</label>
+      <input type="text" id="dNota" placeholder="Opcional">
+    </div>
+    <div class="sheet-actions">
+      <button class="btn-ghost" onclick="closeModal('modalDeposito')">Cancelar</button>
+      <button class="btn-primary" onclick="guardarDeposito()">Guardar</button>
+    </div>
+  </div>
+</div>
+
 <div id="toast"></div>
 
 <script>
 const SUBCATS = ['Comida','Transporte','Entretenimiento','Compras','Suscripciones','Salud','Casa','Otro'];
 const SUBCAT_ICON = {Comida:'🍔',Transporte:'🚗',Entretenimiento:'🎬',Compras:'🛍️',Suscripciones:'📱',Salud:'💊',Casa:'🏠',Otro:'📦'};
 const STORE_KEY = 'gastos_v1';
+const SAVE_KEY = 'ahorro_v1';
+
+const PHRASES_CONSCIENTE = [
+  "Gracias a Dios por la abundancia que fluye en mi vida. Este gasto es parte del flujo natural de dar y recibir.",
+  "El dinero que sale de mis manos regresa multiplicado. Confío en la abundancia infinita del universo.",
+  "Agradezco tener con qué cubrir esto. Cada peso que circula es una prueba de que nunca me falta.",
+  "Bendigo este gasto y bendigo el dinero que está en camino hacia mí, en cantidades cada vez mayores.",
+  "Soy un canal abierto de prosperidad: entra dinero, sale dinero, y siempre hay más en camino.",
+  "Gracias, universo, por proveer siempre lo que necesito, en el momento en que lo necesito.",
+  "Cada gasto consciente es una semilla que siembro con confianza en que la cosecha será abundante."
+];
+
+const PHRASES_IMPULSIVO = [
+  "Suelto cualquier culpa sobre este gasto. El dinero fluye hacia mí con la misma facilidad con la que fluye hacia afuera.",
+  "Gracias a Dios porque siempre hay más de donde vino esto. Mi abundancia no depende de un solo gasto.",
+  "Confío en que el universo reabastece lo que se va. Libero este momento y abro espacio para recibir.",
+  "El dinero es energía en movimiento — este gasto también forma parte de mi historia de prosperidad.",
+  "Agradezco poder darme este gusto. Merezco disfrutar y también merezco abundancia constante."
+];
+
+const PHRASES_AHORRO = [
+  "Gracias, Dios, por permitirme guardar esto. Cada peso ahorrado es una semilla de prosperidad que sigue creciendo.",
+  "El universo conspira a mi favor: entre más ahorro con gratitud, más abundancia atraigo a mi vida.",
+  "Este ahorro es prueba de que el dinero me busca, me encuentra y se queda conmigo.",
+  "Bendigo este dinero guardado. Que se multiplique y regrese a mí en formas inesperadas y maravillosas.",
+  "Gracias por la disciplina y la abundancia que me permiten construir mi futuro con confianza.",
+  "Cada depósito es un acto de fe en mi propia prosperidad. El universo siempre corresponde a la gratitud."
+];
 
 let CACHE = [];
-let S = { tab:'registro', editId:null, tipoSel:null, subcatSel:null, filtroSubcat:null, filtroDesde:null, filtroHasta:null, filtroTexto:'' };
+let SAVE_DATA = { metas:[], depositos:[] };
+let S = { tab:'registro', editId:null, tipoSel:null, subcatSel:null, filtroSubcat:null, filtroDesde:null, filtroHasta:null, filtroTexto:'', metaDepositoSel:null };
 
 const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2);
 const f$ = n => '$' + Number(n||0).toLocaleString('es-MX', {maximumFractionDigits:0});
+const pickPhrase = arr => arr[Math.floor(Math.random()*arr.length)];
 
 const DB = {
-  load(){ try{ CACHE = JSON.parse(localStorage.getItem(STORE_KEY)) || []; }catch(e){ CACHE = []; } },
+  load(){
+    try{ CACHE = JSON.parse(localStorage.getItem(STORE_KEY)) || []; }catch(e){ CACHE = []; }
+    // migración de nombres viejos
+    let changed = false;
+    CACHE.forEach(g=>{
+      if (g.tipo === 'inteligente'){ g.tipo = 'consciente'; changed = true; }
+      if (g.tipo === 'pendejo'){ g.tipo = 'impulsivo'; changed = true; }
+    });
+    if (changed) this.persist();
+  },
   persist(){ localStorage.setItem(STORE_KEY, JSON.stringify(CACHE)); },
   save(item){
     const i = CACHE.findIndex(g => g.id === item.id);
@@ -272,12 +401,36 @@ const DB = {
   delete(id){ CACHE = CACHE.filter(g => g.id !== id); this.persist(); }
 };
 
+const SDB = {
+  load(){ try{ SAVE_DATA = JSON.parse(localStorage.getItem(SAVE_KEY)) || {metas:[],depositos:[]}; }catch(e){ SAVE_DATA = {metas:[],depositos:[]}; } },
+  persist(){ localStorage.setItem(SAVE_KEY, JSON.stringify(SAVE_DATA)); },
+  saveMeta(m){
+    const i = SAVE_DATA.metas.findIndex(x=>x.id===m.id);
+    if (i>=0) SAVE_DATA.metas[i]=m; else SAVE_DATA.metas.push(m);
+    this.persist();
+  },
+  deleteMeta(id){
+    SAVE_DATA.metas = SAVE_DATA.metas.filter(m=>m.id!==id);
+    SAVE_DATA.depositos = SAVE_DATA.depositos.filter(d=>d.metaId!==id);
+    this.persist();
+  },
+  saveDeposito(d){ SAVE_DATA.depositos.push(d); this.persist(); }
+};
+
 function toast(msg, dur=2400){
   const t = document.getElementById('toast');
   t.textContent = msg;
   t.classList.add('on');
   setTimeout(()=>t.classList.remove('on'), dur);
 }
+function showPhrase(text){
+  document.getElementById('phraseText').textContent = text;
+  const b = document.getElementById('phraseBanner');
+  b.classList.add('on');
+  clearTimeout(window._ptimer);
+  window._ptimer = setTimeout(hidePhrase, 5500);
+}
+function hidePhrase(){ document.getElementById('phraseBanner').classList.remove('on'); }
 function openModal(id){ document.getElementById(id).classList.add('on'); }
 function closeModal(id){ document.getElementById(id).classList.remove('on'); }
 function closeMO(e,id){ if(e.target===e.currentTarget) closeModal(id); }
@@ -290,6 +443,7 @@ document.querySelectorAll('.nav-btn').forEach(btn=>{
     document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
     document.getElementById('tab-'+S.tab).classList.add('on');
     if (S.tab==='resumen') renderResumen();
+    if (S.tab==='ahorro') renderAhorro();
   });
 });
 
@@ -313,6 +467,7 @@ function render(){
   renderHeader();
   renderLista();
   if (S.tab==='resumen') renderResumen();
+  if (S.tab==='ahorro') renderAhorro();
 }
 
 function calcularRacha(){
@@ -326,8 +481,8 @@ function calcularRacha(){
     const dateStr = d.toISOString().slice(0,10);
     if (dateStr < primera) break;
     const gastosDia = CACHE.filter(g=>g.fecha===dateStr);
-    const hayBad = gastosDia.some(g=>g.tipo==='pendejo');
-    if (hayBad) break;
+    const hayImpulsivo = gastosDia.some(g=>g.tipo==='impulsivo');
+    if (hayImpulsivo) break;
     streak++;
     d.setDate(d.getDate()-1);
     if (streak > 3650) break;
@@ -338,8 +493,8 @@ function calcularRacha(){
 function renderHeader(){
   const delMes = CACHE.filter(esteMes);
   const total = delMes.reduce((s,g)=>s+Number(g.monto),0);
-  const ok = delMes.filter(g=>g.tipo==='inteligente').reduce((s,g)=>s+Number(g.monto),0);
-  const bad = delMes.filter(g=>g.tipo==='pendejo').reduce((s,g)=>s+Number(g.monto),0);
+  const ok = delMes.filter(g=>g.tipo==='consciente').reduce((s,g)=>s+Number(g.monto),0);
+  const bad = delMes.filter(g=>g.tipo==='impulsivo').reduce((s,g)=>s+Number(g.monto),0);
   document.getElementById('hdrTotal').textContent = f$(total);
   document.getElementById('hdrSub').textContent = delMes.length + (delMes.length===1?' movimiento':' movimientos');
   document.getElementById('hdrOk').textContent = f$(ok);
@@ -400,14 +555,14 @@ function renderLista(){
   }
   const ordenados = [...filtrados].sort((a,b)=> (b.fecha+b.id).localeCompare(a.fecha+a.id));
   cont.innerHTML = ordenados.map(g=>{
-    const isOk = g.tipo==='inteligente';
+    const isOk = g.tipo==='consciente';
     const fecha = new Date(g.fecha+'T00:00:00').toLocaleDateString('es-MX',{day:'numeric',month:'short'});
     return `
       <div class="card" onclick="abrirEdicion('${g.id}')">
         <div class="icon ${isOk?'ok':'bad'}">${SUBCAT_ICON[g.subcat]||'📦'}</div>
         <div class="info">
           <div class="nm">${g.subcat}${g.nota ? ' · '+escapeHtml(g.nota) : ''}</div>
-          <div class="mt">${fecha} · ${isOk?'Inteligente':'Pendejo'}</div>
+          <div class="mt">${fecha} · ${isOk?'Consciente':'Impulsivo'}</div>
         </div>
         <div class="amt ${isOk?'ok':'bad'}">${f$(g.monto)}</div>
       </div>`;
@@ -417,20 +572,16 @@ function renderLista(){
 function escapeHtml(s){ return (s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 
 function renderResumen(){
-  const now = new Date();
   const delMes = CACHE.filter(esteMes);
   const total = delMes.reduce((s,g)=>s+Number(g.monto),0);
   document.getElementById('resTotal').textContent = f$(total);
   document.getElementById('resRacha').textContent = `${calcularRacha()} días`;
 
-  // comparación vs mes anterior
   const {y:yp, m:mp} = mesPasadoRango();
   const delMesPasado = CACHE.filter(g=>enMes(g, yp, mp));
   const totalPasado = delMesPasado.reduce((s,g)=>s+Number(g.monto),0);
   const deltaEl = document.getElementById('resDelta');
-  if (totalPasado === 0 && total === 0){
-    deltaEl.textContent = '';
-  } else if (totalPasado === 0){
+  if (totalPasado === 0){
     deltaEl.textContent = '';
   } else {
     const pct = ((total - totalPasado) / totalPasado) * 100;
@@ -440,7 +591,6 @@ function renderResumen(){
     deltaEl.textContent = `${flecha} ${Math.abs(pct).toFixed(0)}% vs mes pasado`;
   }
 
-  // por subcategoria
   const bySub = {};
   delMes.forEach(g => bySub[g.subcat] = (bySub[g.subcat]||0) + Number(g.monto));
   const maxSub = Math.max(1, ...Object.values(bySub));
@@ -452,30 +602,102 @@ function renderResumen(){
     </div>`).join('') || `<div class="empty" style="padding:20px;"><div class="msg">Sin datos este mes</div></div>`;
   document.getElementById('barsSubcat').innerHTML = subHtml;
 
-  // por tipo
-  const ok = delMes.filter(g=>g.tipo==='inteligente').reduce((s,g)=>s+Number(g.monto),0);
-  const bad = delMes.filter(g=>g.tipo==='pendejo').reduce((s,g)=>s+Number(g.monto),0);
+  const ok = delMes.filter(g=>g.tipo==='consciente').reduce((s,g)=>s+Number(g.monto),0);
+  const bad = delMes.filter(g=>g.tipo==='impulsivo').reduce((s,g)=>s+Number(g.monto),0);
   const maxTipo = Math.max(1, ok, bad);
   document.getElementById('barsTipo').innerHTML = `
-    <div class="bar-row"><div class="nm">🟢 Inteligente</div><div class="bar-track"><div class="bar-fill" style="width:${(ok/maxTipo*100)}%; background:#10b981;"></div></div><div class="amtv">${f$(ok)}</div></div>
-    <div class="bar-row"><div class="nm">🔴 Pendejo</div><div class="bar-track"><div class="bar-fill" style="width:${(bad/maxTipo*100)}%; background:#ef4444;"></div></div><div class="amtv">${f$(bad)}</div></div>
+    <div class="bar-row"><div class="nm">🟢 Consciente</div><div class="bar-track"><div class="bar-fill" style="width:${(ok/maxTipo*100)}%; background:#10b981;"></div></div><div class="amtv">${f$(ok)}</div></div>
+    <div class="bar-row"><div class="nm">🟠 Impulsivo</div><div class="bar-track"><div class="bar-fill" style="width:${(bad/maxTipo*100)}%; background:#f59e0b;"></div></div><div class="amtv">${f$(bad)}</div></div>
   `;
 }
 
-// ---- Modal agregar/editar ----
-function renderChipsSubcat(){
-  document.getElementById('chipsSubcat').innerHTML = SUBCATS.map(s =>
-    `<button class="${S.subcatSel===s?'sel':''}" onclick="setSubcat('${s}')">${SUBCAT_ICON[s]} ${s}</button>`
+// ---- Ahorro ----
+function ahorradoDe(metaId){
+  return SAVE_DATA.depositos.filter(d=>d.metaId===metaId).reduce((s,d)=>s+Number(d.monto),0);
+}
+function renderAhorro(){
+  const totalGlobal = SAVE_DATA.depositos.reduce((s,d)=>s+Number(d.monto),0);
+  document.getElementById('ahTotalGlobal').textContent = f$(totalGlobal);
+  document.getElementById('ahMetasCount').textContent = SAVE_DATA.metas.length;
+
+  const cont = document.getElementById('listaMetas');
+  if (!SAVE_DATA.metas.length){
+    cont.innerHTML = `<div class="empty"><div class="em">🐷</div><div class="msg">Aún no tienes metas de ahorro.<br>Crea la primera para empezar.</div></div>`;
+    return;
+  }
+  cont.innerHTML = SAVE_DATA.metas.map(m=>{
+    const ahorrado = ahorradoDe(m.id);
+    const pct = Math.min(100, (ahorrado / m.objetivo) * 100);
+    const fechaTxt = m.fecha_limite ? ` · meta: ${new Date(m.fecha_limite+'T00:00:00').toLocaleDateString('es-MX',{day:'numeric',month:'short',year:'numeric'})}` : '';
+    return `
+      <div class="goal-card">
+        <div class="gtop">
+          <div class="gname">${escapeHtml(m.nombre)}</div>
+          <button class="gdel" onclick="eliminarMeta('${m.id}')">🗑</button>
+        </div>
+        <div class="goal-track"><div class="goal-fill" style="width:${pct}%;"></div></div>
+        <div class="gnums"><span><b>${f$(ahorrado)}</b> de ${f$(m.objetivo)}</span><span>${pct.toFixed(0)}%${fechaTxt}</span></div>
+        <div class="goal-actions">
+          <button onclick="abrirDepositoParaMeta('${m.id}')">＋ Agregar ahorro</button>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+document.getElementById('btnNuevaMeta').addEventListener('click', ()=>{
+  document.getElementById('mNombre').value = '';
+  document.getElementById('mObjetivo').value = '';
+  document.getElementById('mFecha').value = '';
+  openModal('modalMeta');
+});
+
+function guardarMeta(){
+  const nombre = document.getElementById('mNombre').value.trim();
+  const objetivo = parseFloat(document.getElementById('mObjetivo').value);
+  const fecha_limite = document.getElementById('mFecha').value || null;
+  if (!nombre){ toast('Ponle un nombre a tu meta'); return; }
+  if (!objetivo || objetivo <= 0){ toast('Pon un monto objetivo válido'); return; }
+  SDB.saveMeta({ id: uid(), nombre, objetivo, fecha_limite, created_at: new Date().toISOString() });
+  closeModal('modalMeta');
+  renderAhorro();
+  toast('Meta creada');
+}
+
+function eliminarMeta(id){
+  if (!confirm('¿Eliminar esta meta y todos sus depósitos?')) return;
+  SDB.deleteMeta(id);
+  renderAhorro();
+  toast('Meta eliminada');
+}
+
+function renderChipsMetaDeposito(){
+  document.getElementById('chipsMetaDeposito').innerHTML = SAVE_DATA.metas.map(m=>
+    `<button class="${S.metaDepositoSel===m.id?'sel':''}" onclick="setMetaDeposito('${m.id}')">${escapeHtml(m.nombre)}</button>`
   ).join('');
 }
-function setSubcat(s){ S.subcatSel = s; renderChipsSubcat(); }
-function setTipo(t){
-  S.tipoSel = t;
-  document.getElementById('btnTipoOk').className = t==='inteligente' ? 'sel-ok' : '';
-  document.getElementById('btnTipoBad').className = t==='pendejo' ? 'sel-bad' : '';
+function setMetaDeposito(id){ S.metaDepositoSel = id; renderChipsMetaDeposito(); }
+
+function abrirDepositoParaMeta(metaId){
+  S.metaDepositoSel = metaId;
+  document.getElementById('dMonto').value = '';
+  document.getElementById('dNota').value = '';
+  document.getElementById('dFecha').value = new Date().toISOString().slice(0,10);
+  renderChipsMetaDeposito();
+  openModal('modalDeposito');
 }
 
 document.getElementById('fabAdd').addEventListener('click', ()=>{
+  if (S.tab === 'ahorro'){
+    if (!SAVE_DATA.metas.length){
+      document.getElementById('mNombre').value = '';
+      document.getElementById('mObjetivo').value = '';
+      document.getElementById('mFecha').value = '';
+      openModal('modalMeta');
+    } else {
+      abrirDepositoParaMeta(SAVE_DATA.metas[0].id);
+    }
+    return;
+  }
   S.editId = null;
   S.tipoSel = null;
   S.subcatSel = null;
@@ -489,6 +711,33 @@ document.getElementById('fabAdd').addEventListener('click', ()=>{
   openModal('modalGasto');
   setTimeout(()=>document.getElementById('fMonto').focus(), 200);
 });
+
+function guardarDeposito(){
+  const monto = parseFloat(document.getElementById('dMonto').value);
+  const fecha = document.getElementById('dFecha').value;
+  const nota = document.getElementById('dNota').value.trim();
+  if (!monto || monto <= 0){ toast('Pon un monto válido'); return; }
+  if (!S.metaDepositoSel){ toast('Elige una meta'); return; }
+  if (!fecha){ toast('Pon una fecha'); return; }
+  SDB.saveDeposito({ id: uid(), metaId: S.metaDepositoSel, monto, fecha, nota, created_at: new Date().toISOString() });
+  closeModal('modalDeposito');
+  renderAhorro();
+  showPhrase(pickPhrase(PHRASES_AHORRO));
+  toast('Ahorro registrado');
+}
+
+// ---- Modal agregar/editar gasto ----
+function renderChipsSubcat(){
+  document.getElementById('chipsSubcat').innerHTML = SUBCATS.map(s =>
+    `<button class="${S.subcatSel===s?'sel':''}" onclick="setSubcat('${s}')">${SUBCAT_ICON[s]} ${s}</button>`
+  ).join('');
+}
+function setSubcat(s){ S.subcatSel = s; renderChipsSubcat(); }
+function setTipo(t){
+  S.tipoSel = t;
+  document.getElementById('btnTipoOk').className = t==='consciente' ? 'sel-ok' : '';
+  document.getElementById('btnTipoBad').className = t==='impulsivo' ? 'sel-bad' : '';
+}
 
 function abrirEdicion(id){
   const g = CACHE.find(x=>x.id===id);
@@ -512,10 +761,11 @@ function guardarGasto(){
   const nota = document.getElementById('fNota').value.trim();
 
   if (!monto || monto <= 0){ toast('Pon un monto válido'); return; }
-  if (!S.tipoSel){ toast('Elige inteligente o pendejo'); return; }
+  if (!S.tipoSel){ toast('Elige consciente o impulsivo'); return; }
   if (!S.subcatSel){ toast('Elige una subcategoría'); return; }
   if (!fecha){ toast('Pon una fecha'); return; }
 
+  const esNuevo = !S.editId;
   const item = {
     id: S.editId || uid(),
     monto, tipo: S.tipoSel, subcat: S.subcatSel, nota, fecha,
@@ -524,7 +774,11 @@ function guardarGasto(){
   DB.save(item);
   closeModal('modalGasto');
   render();
-  toast(S.editId ? 'Gasto actualizado' : 'Gasto guardado');
+  if (esNuevo){
+    const pool = item.tipo === 'consciente' ? PHRASES_CONSCIENTE : PHRASES_IMPULSIVO;
+    showPhrase(pickPhrase(pool));
+  }
+  toast(esNuevo ? 'Gasto guardado' : 'Gasto actualizado');
 }
 
 function eliminarGasto(){
@@ -537,33 +791,44 @@ function eliminarGasto(){
 
 // ---- Exportar a Excel ----
 document.getElementById('btnExport').addEventListener('click', ()=>{
-  if (!CACHE.length){ toast('No hay gastos que exportar'); return; }
+  if (!CACHE.length && !SAVE_DATA.depositos.length){ toast('No hay datos que exportar'); return; }
+  const wb = XLSX.utils.book_new();
+
   const ordenados = [...CACHE].sort((a,b)=> a.fecha.localeCompare(b.fecha));
   const rows = ordenados.map(g => ({
     Fecha: g.fecha,
     Monto: Number(g.monto),
-    Tipo: g.tipo === 'inteligente' ? 'Inteligente' : 'Pendejo',
+    Tipo: g.tipo === 'consciente' ? 'Consciente' : 'Impulsivo',
     Subcategoria: g.subcat,
     Nota: g.nota || ''
   }));
   const ws = XLSX.utils.json_to_sheet(rows);
   ws['!cols'] = [{wch:12},{wch:10},{wch:12},{wch:16},{wch:30}];
-  const wb = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb, ws, 'Gastos');
 
   const bySub = {};
-  const byTipo = {inteligente:0, pendejo:0};
+  const byTipo = {consciente:0, impulsivo:0};
   CACHE.forEach(g=>{ bySub[g.subcat]=(bySub[g.subcat]||0)+Number(g.monto); byTipo[g.tipo]+=Number(g.monto); });
   const resumenRows = [
     {Concepto:'Total gastado', Monto: CACHE.reduce((s,g)=>s+Number(g.monto),0)},
-    {Concepto:'Total inteligente', Monto: byTipo.inteligente},
-    {Concepto:'Total pendejo', Monto: byTipo.pendejo},
+    {Concepto:'Total consciente', Monto: byTipo.consciente},
+    {Concepto:'Total impulsivo', Monto: byTipo.impulsivo},
     {},
     ...Object.entries(bySub).sort((a,b)=>b[1]-a[1]).map(([k,v])=>({Concepto:k, Monto:v}))
   ];
   const ws2 = XLSX.utils.json_to_sheet(resumenRows);
   ws2['!cols'] = [{wch:22},{wch:14}];
   XLSX.utils.book_append_sheet(wb, ws2, 'Resumen');
+
+  if (SAVE_DATA.metas.length || SAVE_DATA.depositos.length){
+    const ahorroRows = SAVE_DATA.depositos.map(d=>{
+      const meta = SAVE_DATA.metas.find(m=>m.id===d.metaId);
+      return { Fecha: d.fecha, Meta: meta ? meta.nombre : '(eliminada)', Monto: Number(d.monto), Nota: d.nota || '' };
+    }).sort((a,b)=>a.Fecha.localeCompare(b.Fecha));
+    const ws3 = XLSX.utils.json_to_sheet(ahorroRows);
+    ws3['!cols'] = [{wch:12},{wch:20},{wch:12},{wch:30}];
+    XLSX.utils.book_append_sheet(wb, ws3, 'Ahorro');
+  }
 
   const fechaHoy = new Date().toISOString().slice(0,10);
   XLSX.writeFile(wb, `mis-gastos-${fechaHoy}.xlsx`);
@@ -572,8 +837,9 @@ document.getElementById('btnExport').addEventListener('click', ()=>{
 
 // ---- Respaldo / restaurar JSON ----
 document.getElementById('btnBackupExport').addEventListener('click', ()=>{
-  if (!CACHE.length){ toast('No hay datos que respaldar'); return; }
-  const blob = new Blob([JSON.stringify(CACHE, null, 2)], {type:'application/json'});
+  if (!CACHE.length && !SAVE_DATA.metas.length){ toast('No hay datos que respaldar'); return; }
+  const payload = { gastos: CACHE, ahorro: SAVE_DATA };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], {type:'application/json'});
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
@@ -593,16 +859,25 @@ document.getElementById('fileImport').addEventListener('change', (e)=>{
   reader.onload = (ev)=>{
     try{
       const data = JSON.parse(ev.target.result);
-      if (!Array.isArray(data)) throw new Error('formato inválido');
-      const existentes = new Set(CACHE.map(g=>g.id));
       let agregados = 0;
-      data.forEach(g=>{
+      const gastosArr = Array.isArray(data) ? data : (data.gastos || []);
+      const existentes = new Set(CACHE.map(g=>g.id));
+      gastosArr.forEach(g=>{
         if (g && g.id && !existentes.has(g.id)){
+          if (g.tipo === 'inteligente') g.tipo = 'consciente';
+          if (g.tipo === 'pendejo') g.tipo = 'impulsivo';
           CACHE.push(g);
           agregados++;
         }
       });
       DB.persist();
+      if (data.ahorro){
+        const metasExist = new Set(SAVE_DATA.metas.map(m=>m.id));
+        (data.ahorro.metas||[]).forEach(m=>{ if(!metasExist.has(m.id)) SAVE_DATA.metas.push(m); });
+        const depExist = new Set(SAVE_DATA.depositos.map(d=>d.id));
+        (data.ahorro.depositos||[]).forEach(d=>{ if(!depExist.has(d.id)) SAVE_DATA.depositos.push(d); });
+        SDB.persist();
+      }
       render();
       toast(`${agregados} gastos importados`);
     }catch(err){
@@ -617,6 +892,7 @@ document.getElementById('fileImport').addEventListener('change', (e)=>{
 (function(){
   try{
     DB.load();
+    SDB.load();
     document.getElementById('loading').style.display = 'none';
     document.getElementById('app').style.display = 'flex';
     render();
